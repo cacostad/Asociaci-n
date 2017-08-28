@@ -57,7 +57,16 @@ public class Main {
                     System.out.println("La Cancion no puede ser agregado al disco especificado");
                 }
             }else if(opcion == 3){
-                
+                 System.out.println("Ingrese el nombre del disco");
+                 String nombreDisco= in.next();
+                 System.out.println("Ingrese el nombre de la cancion");
+                 String nombreCancion = in.next();
+                 Cancion cancion = tienda.darInformacionCancion(nombreDisco, nombreCancion);
+                 if(cancion != null){
+                     System.out.println(cancion.getNombre() + " " + cancion.getPrecio());
+                 }else{
+                     System.out.println("No existe un cancion en el disco especificado.");
+                 }
             }else{
                 System.out.println("Opcion invalida");
             }
